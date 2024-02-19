@@ -18,6 +18,8 @@ const MenuContext = deprecatedComponent(
   ['openMenu', 'toggleMenu', 'closeMenu', 'isMenuOpen'],
 )(MenuProvider);
 
+console.log('FG dev')
+
 export {
   Menu as default,
   Menu,
