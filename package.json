@@ -1,6 +1,6 @@
 {
-  "name": "react-native-popup-menu",
-  "version": "0.16.1",
+  "name": "@react-native-oh-tpl/react-native-popup-menu",
+  "version": "0.16.1-0.0.1",
   "description": "extensible popup/context menu for react native",
   "main": "build/rnpm.js",
   "directories": {
@@ -45,6 +45,9 @@
     "verbose": true,
     "collectCoverage": true,
     "setupTestFrameworkScriptFile": "<rootDir>/setup-jasmine-env.js"
+  },
+  "harmony": {
+    "alias": "react-native-popup-menu"
   },
   "devDependencies": {
     "@babel/core": "^7.2.2",
