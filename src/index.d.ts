@@ -3,19 +3,17 @@
  *
  * @author Wang Guan <momocraft@gmail>
  */
+export {
+  Menu,
+  MenuProvider,
+  MenuContext,
+  MenuOption,
+  MenuOptions,
+  MenuTrigger,
+  renderers,
+  withMenuContext,
+} from './index'
 
-// export { default as MenuProvider } from './MenuProvider'
-// export { default as Menu } from './Menu'
-// export { default as MenuOption } from './MenuOption'
-// export { default as MenuOptions } from './MenuOptions'
-// export { default as MenuPlaceholder } from './MenuPlaceholder'
-// export { default as MenuTrigger } from './MenuTrigger'
-// export const renderers: Readonly<{
-//   ContextMenu: Function;
-//   NotAnimatedContextMenu: Function;
-//   SlideInMenu: Function;
-//   Popover: Function;
-// }>;
 
 declare module "react-native-popup-menu" {
   import * as React from "react";
