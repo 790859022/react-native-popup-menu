@@ -4,6 +4,5 @@
   "dev": true,
   "minify": false,
   "urlRandomness": "w3-vvy",
-  "https": false,
-  "scheme": null
+  "https": false
 }
