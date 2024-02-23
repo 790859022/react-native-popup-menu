@@ -32,3 +32,16 @@
 ## 实现
 - 原仓库代码逻辑目前不需要调整，补充针对 `Harmony` 应用的使用 demo。
 
+## package.json 发包补充
+```json
+{
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/react-native-oh-library/react-native-popup-menu.git"
+    },
+    "publishConfig": {
+        "access": "public"
+    },
+}
+```
+

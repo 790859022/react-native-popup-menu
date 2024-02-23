@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { StyleSheet, Text, View, TouchableHighlight } from 'react-native';
+import { StyleSheet, Text, View, TouchableHighlight, Button } from 'react-native';
 import Menu from 'react-native-popup-menu';
 
 import Example from './Example';
@@ -40,9 +40,21 @@ export default class Demo extends Component {
     super(props, ctx);
     this.state = {
       selected: undefined,
+      showText: '?????'
     };
   }
+  buttonClickHandle(key){
+    this.setState({
+      showText: key
+    })
+  }
+  backButtonClickHandle(){
+    this.setState({
+      showText: '?????'
+    })
+  }
   render() {
+
     if (this.state.selected) {
       return <this.state.selected/>;
     }
@@ -51,6 +63,18 @@ export default class Demo extends Component {
           <View>
             <Text>Select example:</Text>
             {demos.map(this.renderDemo, this)}
+          </View>
+          <Text onPress={() => this.buttonClickHandle('one')}> button 1 </Text>
+          <Text onPress={() => this.buttonClickHandle('two')}> button 2 </Text>
+          <Text>{this.state.showText}</Text>
+          {
+            this.state.showText === 'one' && <View style={styles.panel}><Text style={styles.buttonTextOne}>我是按钮 one</Text></View>
+          }
+          {
+            this.state.showText === 'two' && <View style={styles.panel}><Text style={styles.buttonTextTwo}>我是按钮 two</Text></View>
+          }
+          <View style={styles.backButtonPanel}>
+          <Button title="Back" mode="contained" style={{ width: 100 }} onPress={() => this.backButtonClickHandle() }></Button>
           </View>
         </View>
     );
@@ -74,5 +98,44 @@ const styles = StyleSheet.create({
     flexDirection:'column',
     alignItems:'center',
     justifyContent:'center',
+    // backgroundColor: '#f00',
+    // padding: 24
   },
+  panel: {
+    position: 'absolute',
+    left: 0,
+    top: 0,
+    width: '100%',
+    height: '100%',
+    backgroundColor: 'rgba(255, 0, 0, 0.8)',
+    zIndex: 99,
+    elevation: 99,
+    alignItems: 'center'
+  },
+  buttonTextOne: {
+    // backgroundColor: '#f00',
+    // position: 'absolute',
+    // top:0,
+    // left: 0
+  },
+  buttonTextTwo: {
+    // backgroundColor: '#0f0',
+    // position: 'absolute',
+    // top:10,
+    // left: 10
+    // right:0,
+    // bottom: 0
+  },
+  backButtonPanel:{
+    position: 'absolute',
+    width: '100%',
+    left: 0,
+    bottom: 10,
+    // backgroundColor: '#fff',
+    zIndex: 100,
+    elevation: 100,
+    // flexDirection:'column',
+    alignItems:'center',
+    // justifyContent:'center',
+  }
 });

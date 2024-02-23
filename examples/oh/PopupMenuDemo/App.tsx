@@ -10,7 +10,7 @@ import {
   Switch,
 } from 'react-native';
 
-import BaseDemo from './BaseDemo'
+import Demo from './Demo'
 
 export default function App() {
   return (
@@ -18,7 +18,7 @@ export default function App() {
       <ScrollView>
         <View style={styles.container}>
           {Platform.OS === 'harmony' && (
-            <BaseDemo  />
+            <Demo  />
           )}
         </View>
       </ScrollView>
@@ -28,26 +28,9 @@ export default function App() {
 
 const styles = StyleSheet.create({
   main: {
-    backgroundColor: '#F5FCFF',
+    backgroundColor: '#ffff00',
   },
   container: {
     padding: 24,
-    paddingBottom: 60,
-  },
-  title: {
-    fontSize: 18,
-  },
-  elementContainer: {
-    marginTop: 8,
-  },
-  heading: {
-    fontSize: 22,
-    color: 'black',
-  },
-  rtlSwitchContainer: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    paddingHorizontal: 40,
-    paddingTop: 20,
-  },
+  }
 });
