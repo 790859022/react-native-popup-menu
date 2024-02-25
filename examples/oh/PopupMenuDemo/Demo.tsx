@@ -1,57 +1,73 @@
 import { View, Text, StyleSheet, Button } from 'react-native'
 import React, { useState, useMemo, useCallback } from 'react'
 import BasicExample from './BasicExample'
-import AdvancedExample from './AdvancedExample'
+import AdvancedExample from './Example'
+import ControlledExample from './ControlledExample'
+import MenuMethodsExample from './MenuMethodsExample'
+import ExtensionExample from './ExtensionExample'
+import ModalExample from './ModalExample'
+import StylingExample from './StylingExample'
+import TouchableExample from './TouchableExample'
+import NonRootExample from './NonRootExample'
+import CloseOnBackExample from './CloseOnBackExample'
+import FlatListExample from './FlatListExample'
+import InFlatListExample from './InFlatListExample'
+import PopoverExample from './PopoverExample'
 
 const demos = [
     { Component: BasicExample, name: 'Basic example', key: "BasicExample" },
-    { Component: AdvancedExample, name: 'Advanced example'， key: 'AdvancedExample' },
-    // { Component: ControlledExample, name: 'Controlled example' },
-    // { Component: MenuMethodsExample, name: 'Controlling menu using menu methods' },
-    // { Component: ExtensionExample, name: 'Extensions example' },
-    // { Component: ModalExample, name: 'Modal example' },
-    // { Component: StylingExample, name: 'Styling example' },
-    // { Component: TouchableExample, name: 'Touchable config example' },
-    // { Component: NonRootExample, name: 'Non root example' },
-    // { Component: CloseOnBackExample, name: 'Close on back button press example' },
-    // { Component: FlatListExample, name: 'Using FlatList' },
-    // { Component: InFlatListExample, name: 'Menu in FlatList' },
-    // { Component: PopoverExample, name: 'Popover renderer' },
+    { Component: AdvancedExample, name: 'Advanced example', key: 'AdvancedExample' },
+    { Component: ControlledExample, name: 'Controlled example', key: 'ControlledExample' },
+    { Component: MenuMethodsExample, name: 'Controlling menu using menu methods', key: 'MenuMethodsExample' },
+    { Component: ExtensionExample, name: 'Extensions example', key: 'ExtensionExample' },
+    { Component: ModalExample, name: 'Modal example', key: 'ModalExample' },
+    { Component: StylingExample, name: 'Styling example', key: 'StylingExample' },
+    { Component: TouchableExample, name: 'Touchable config example', key: 'TouchableExample' },
+    { Component: NonRootExample, name: 'Non root example', key: 'NonRootExample' },
+    { Component: CloseOnBackExample, name: 'Close on back button press example', key: 'CloseOnBackExample' },
+    { Component: FlatListExample, name: 'Using FlatList', key: 'FlatListExample' },
+    { Component: InFlatListExample, name: 'Menu in FlatList', key: 'InFlatListExample' },
+    { Component: PopoverExample, name: 'Popover renderer', key: 'PopoverExample' },
 ];
 
 export default function Demo() {
-    const [currentDemoKey, setCurrentDemoKey] = useState<string>('')
+    const [currentDemoKey, setCurrentDemoKey] = useState('')
+
+    const demoNavClickHandle = useCallback((item) => setCurrentDemoKey(item.key), [])
+    const backClickHandle = useCallback(() => setCurrentDemoKey(''), [])
+
     const currentDemo = useMemo(() => {
-        switch(currentDemoKey){
-            case 'BasicExample': {
-                return <BasicExample />
-            }
-            case 'AdvancedExample': {
-                return <AdvancedExample />
-            }
-
-            default : {
-                return <Text>Select Demo</Text>
-            }
-        }
+        const target = demos.find(item => item.key === currentDemoKey)
+        console.log(target && target.key)
+        if(target) return <target.Component />
+        return <Text>Select Demo</Text> 
     }, [currentDemoKey])
-
-    const demoNavClickHandle = useCallback((item) => setCurrentDemoKey(item.key), [currentDemo])
-
-    const demoMenu = useMemo(() => demos.map(item => (<Text onPress={() => demoNavClickHandle(item)}>{item.name}</Text>)), [])
-    
+    const demoMenu = useMemo(() => demos.map((item, index) => (
+      <Text style={styles.navItem} key={item.key} onPress={() => demoNavClickHandle(item)}>{index+1}. {item.name}</Text>
+    )), [])
+  
     return (
-        <View>
+        <View style={styles.container}>
             <View style={styles.demoNav}>{demoMenu}</View>
-            <View style={styles.demoPanel}>{currentDemo}</View>
-            <View style={styles.backButtonPanel}><Button title='Back'></Button></View>
+            {currentDemoKey && (<View style={styles.demoPanel}>{currentDemo}</View>)}
+            {currentDemoKey && (<View style={styles.backButtonPanel}><Button title='Back' onPress={() => backClickHandle()}></Button></View>)}
         </View>
     )
 }
 
 const styles = StyleSheet.create({
+    container: {
+        backgroundColor: '#eee',
+        width: '100%',
+        height: '100%'
+    },
     demoNav: {
-        padding: 24
+        padding: 24,
+
+    },
+    navItem: {
+      fontSize: 14,
+      color: '#00f'
     },
     demoPanel: {
         position: 'absolute',
@@ -61,7 +77,7 @@ const styles = StyleSheet.create({
         height: '100%',
         zIndex: 99,
         elevation: 99,
-        backgroundColor: '#fff'
+        backgroundColor: 'rgba(255,255,255, 1)'
     },
     backButtonPanel: {
         position: 'absolute',
