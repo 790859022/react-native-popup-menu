@@ -6,7 +6,7 @@ import {
   MenuTrigger,
   MenuOptions,
   MenuOption,
-} from '@react-native-oh-tpl/react-native-popup-menu';
+} from 'react-native-popup-menu';
 
 Menu.debug = true;
 

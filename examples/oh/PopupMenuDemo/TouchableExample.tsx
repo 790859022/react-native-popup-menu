@@ -10,7 +10,7 @@ import Menu, {
   MenuOptions,
   MenuOption,
   MenuTrigger,
-} from '@react-native-oh-tpl/react-native-popup-menu';
+} from 'react-native-popup-menu';
 
 class TouchableExample extends React.Component {
   constructor(props) {

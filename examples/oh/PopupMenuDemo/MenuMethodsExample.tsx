@@ -6,7 +6,7 @@ import Menu, {
   MenuOption,
   MenuTrigger,
   withMenuContext,
-} from '@react-native-oh-tpl/react-native-popup-menu';
+} from 'react-native-popup-menu';
 
 const Openner = (props) => (
   <TouchableOpacity style={{ paddingTop: 50 }}

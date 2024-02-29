@@ -6,7 +6,7 @@ import Menu, {
   MenuOption,
   MenuTrigger,
   renderers,
-} from '@react-native-oh-tpl/react-native-popup-menu';
+} from 'react-native-popup-menu';
 
 const { ContextMenu, SlideInMenu, Popover } = renderers;
 

@@ -6,7 +6,7 @@ import Menu, {
   MenuOptions,
   MenuOption,
   renderers,
-} from '@react-native-oh-tpl/react-native-popup-menu';
+} from 'react-native-popup-menu';
 
 let unique = 0;
 const { SlideInMenu } = renderers;

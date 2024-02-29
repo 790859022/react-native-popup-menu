@@ -5,7 +5,7 @@ import Menu, {
   MenuOptions,
   MenuOption,
   MenuTrigger,
-} from '@react-native-oh-tpl/react-native-popup-menu';
+} from 'react-native-popup-menu';
 
 const NonRootExample = () => (
   <View style={{padding: 60, flex:1}}>
