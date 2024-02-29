@@ -4,7 +4,7 @@ import {
   MenuOptions,
   MenuTrigger,
   renderers,
-} from '@react-native-oh-tpl/react-native-popup-menu';
+} from 'react-native-popup-menu';
 import { Text, View, StyleSheet } from 'react-native';
 import React from 'react';
 

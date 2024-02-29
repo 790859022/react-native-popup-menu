@@ -6,7 +6,7 @@ import {
   MenuOptions,
   MenuOption,
   MenuTrigger,
-} from '@react-native-oh-tpl/react-native-popup-menu';
+} from 'react-native-popup-menu';
 
 const BasicExample = () => (
   <MenuProvider style={{flexDirection: 'column', padding: 30}}>

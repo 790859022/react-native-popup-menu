@@ -62,7 +62,8 @@ const styles = StyleSheet.create({
         height: '100%'
     },
     demoNav: {
-        padding: 24,
+        padding: 30,
+        paddingTop: 60
 
     },
     navItem: {
@@ -77,7 +78,8 @@ const styles = StyleSheet.create({
         height: '100%',
         zIndex: 99,
         elevation: 99,
-        backgroundColor: 'rgba(255,255,255, 1)'
+        backgroundColor: 'rgba(255,255,255, 1)',
+        paddingTop: 60
     },
     backButtonPanel: {
         position: 'absolute',
