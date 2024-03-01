@@ -14,23 +14,17 @@ import Demo from './Demo'
 
 export default function App() {
   return (
-    <SafeAreaView style={styles.main}>
-      <ScrollView>
-        <View style={styles.container}>
-          {Platform.OS === 'harmony' && (
-            <Demo  />
-          )}
-        </View>
-      </ScrollView>
-    </SafeAreaView>
+    <View style={styles.container}>
+      {Platform.OS === 'harmony' && (
+        <Demo  />
+      )}
+    </View>
   );
 }
 
 const styles = StyleSheet.create({
-  main: {
-    backgroundColor: '#ffff00',
-  },
   container: {
-    padding: 24,
+    width: '100%',
+    height: '100%'
   }
 });
