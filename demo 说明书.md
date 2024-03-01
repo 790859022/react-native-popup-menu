@@ -1,8 +1,8 @@
 # Demo 说明书流程
 
 ### 编写说明书
-> <font color="red">说明书是 Markdown 文件</font>；
-> <font color="red">说明书是在Gitee上管理</font>；
+> <font color="red">demo 说明书是 Markdown 文件，仓库在gitee</font>
+> <font color="red">demo 源码管理在 github</font>
 
 - 1、去 gitee 仓库找一说明书模版，可根据自己负责三方包的类型找相应的md文件参考。[gitee地址](https://gitee.com/react-native-oh-library/usage-docs/tree/master/zh-cn)
 - 2、不同类型的三方库内容不同 [规则](https://react-native-oh-library.gitee.io/docs/#/zh-cn/usage-docs-checklist)
@@ -42,3 +42,6 @@
 
 
 ### demo 源码提交流程
+- 直接 clone [仓库](https://github.com/react-native-oh-library/RNOHDCS) 到本地
+- 补充 demo 直接提交
+- 如果没有 [仓库](https://github.com/react-native-oh-library/RNOHDCS) 权限，先查看自己github 注册的邮箱，是否有邀请邮件。如果没有向上反馈。
